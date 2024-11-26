@@ -1,0 +1,28 @@
+<!-- Step 3 Add Header -->
+ <%- include('partials/header.ejs') %>
+
+ <% if (locals.name && locals.results && locals.Fname) { %>
+  <h1> 👇 Compactability result👇 </h1>
+<p class="emoji"> &#128151; &#128151; &#128151;</p>
+
+<h2 style="color: antiquewhite;"><%= Fname  %>  &  <%=  name %></h2>
+<h2>your Compatibility score is: <br><span style="color: antiquewhite;"><%= results %>%</span></h2>
+<p class="emoji"> &#128151; &#128151; &#128151;</p>
+<form action="/" method="POST">
+  <input type="submit" value="check Another">
+</form>
+  <% } else { %>
+    <h1> 👇 Check for compatibility 👇 </h1>
+    <p class="emoji"> &#128151; &#128151; &#128151;</p>
+    <p class="p">"Discover if your connection goes beyond the surface – because true compatibility is not just attraction, but the foundation of every lasting bond."</p>
+    <p class="emoji"> &#128151; &#128151; &#128151;</p>
+    <form action="/submit" method="POST">
+      <input type="text" placeholder="enter your name" name="fname" required>
+      <input type="text" placeholder="enter the other name" name="othername" required>
+      <input type="submit" value="See Result">
+    </form>
+ <% } %>
+
+
+  <!-- Step 3 Add Footer -->
+  <%- include('partials/Footer.ejs') %>
